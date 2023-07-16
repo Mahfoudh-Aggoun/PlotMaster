@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.JoggingTabFragment">
+
+
+    <data>
+        <variable
+            name="machineStatus"
+            type="com.example.plotmaster.listeners.MachineStatusListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/pen_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/arrow"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="30dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:text="pen up"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pen_up" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="pen down"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/pen_down"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/pen_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:rotation="180"
+            android:src="@drawable/arrow"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="30dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/jog_x_negative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:rotation="-90"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/run_homing_cycle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="35dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/run_homing_cycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginEnd="21dp"
+            android:src="@drawable/home_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/jog_x_positive"
+            app:layout_constraintStart_toEndOf="@id/jog_x_negative"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/jog_y_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toTopOf="@id/run_homing_cycle"
+            app:layout_constraintEnd_toStartOf="@id/jog_x_positive"
+            app:layout_constraintStart_toEndOf="@id/jog_x_negative"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.51"
+            app:maxImageSize="35dp"
+            app:useCompatPadding="false" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/jog_x_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:rotation="90"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/run_homing_cycle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="35dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/jog_y_negative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:rotation="180"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/jog_x_positive"
+            app:layout_constraintStart_toEndOf="@id/jog_x_negative"
+            app:layout_constraintTop_toBottomOf="@id/run_homing_cycle"
+            app:layout_constraintVertical_bias="0.52"
+            app:maxImageSize="35dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/jog_xy_top_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:rotation="-45"
+            android:src="@drawable/arrow"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@id/jog_x_negative"
+            app:layout_constraintEnd_toStartOf="@id/jog_y_positive"
+            app:maxImageSize="30dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/jog_xy_top_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:rotation="45"
+            android:src="@drawable/arrow"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/jog_x_positive"
+            app:layout_constraintStart_toEndOf="@+id/jog_y_positive"
+            app:maxImageSize="30dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/jog_xy_bottom_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:rotation="135"
+            android:src="@drawable/arrow"
+            app:fabSize="mini"
+            app:layout_constraintStart_toEndOf="@+id/jog_y_negative"
+            app:layout_constraintTop_toBottomOf="@+id/jog_x_positive"
+            app:maxImageSize="30dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+            android:id="@+id/jog_xy_bottom_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:rotation="-135"
+            android:src="@drawable/arrow"
+            app:fabSize="mini"
+            app:layout_constraintEnd_toStartOf="@+id/jog_y_negative"
+            app:layout_constraintTop_toBottomOf="@+id/jog_x_negative"
+            app:maxImageSize="30dp" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0.8">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="step size:"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/step_size"
+                android:layout_width="50dp"
+                android:gravity="center"
+                android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+                android:text="@{machineStatus.jogging.stepXY.toString()}"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="jogging feed"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/jogging_feed"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:enabled="@{!machineStatus.state.equals(machineStatus.STATE_NOT_CONNECTED)}"
+                android:gravity="center"
+                android:text="@{machineStatus.jogging.feed.toString()}"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@id/plot_and_position_layout" />
+        </LinearLayout>
+
+
+</LinearLayout>
+    </LinearLayout>
+</layout>

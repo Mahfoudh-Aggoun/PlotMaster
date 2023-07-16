@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.ConsoleTabFragment">
+
+    <data>
+        <variable name="console" type="com.example.plotmaster.listeners.ConsoleLoggerListener" />
+        <variable name="machineStatus" type="com.example.plotmaster.listeners.MachineStatusListener" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/console_scroll_view"
+        android:paddingTop="4dp"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_toStartOf="@+id/console_verbose_output"
+                    android:fontFamily="serif"
+                    android:text="verbose output"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/console_verbose_output"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </RelativeLayout>
+
+            <ViewSwitcher
+                android:id="@+id/console_view_switcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <RelativeLayout
+                    android:padding="8dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/console_logger"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_border_edit_text"
+                        android:fadeScrollbars="false"
+                        android:gravity="bottom"
+                        android:maxHeight="150dp"
+                        android:maxLines="10"
+                        android:minHeight="150dp"
+                        android:overScrollMode="always"
+                        android:padding="8dp"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbars="vertical"
+                        android:text="@{console.messages}"
+                        android:textSize="12sp"
+                        tools:ignore="SmallSp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:background="@drawable/rounded_border_edit_text"
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scrollbars="vertical"/>
+
+                </RelativeLayout>
+
+            </ViewSwitcher>
+
+            <TableLayout
+                android:padding="4dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow tools:ignore="UselessParent">
+
+                    <EditText
+                        android:id="@+id/command_input"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:autofillHints=""
+                        android:background="@drawable/rounded_border_edit_text"
+                        android:fontFamily="serif"
+                        android:hint="Gcode"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="78"
+                        android:maxLines="1"
+                        android:padding="4dp"
+                        android:textSize="24sp"
+                        tools:ignore="HardcodedText,LabelFor" />
+                    <Button
+                        android:textSize="14sp"
+                        android:layout_marginStart="5dp"
+                        android:id="@+id/send_command"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText"
+                        android:text="@string/text_send"
+                        />
+                    <Button
+                        android:text="history"
+                        android:textSize="14sp"
+                        android:layout_marginStart="5dp"
+                        android:id="@+id/console_history"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        tools:ignore="HardcodedText"
+                        />
+
+
+
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
+

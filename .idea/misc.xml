@@ -1,0 +1,34 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.124" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable-v24/rounded_border_edit_text.xml" value="0.2085" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable/console_tab_icon.xml" value="0.2085" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable/home_icon.xml" value="0.144" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable/ic_launcher_background.xml" value="0.124" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable/jogging_tab_icon.xml" value="0.1275" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable/left_button.xml" value="0.2075" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable/soft_reset_icon.xml" value="0.106" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable/splash_background.xml" value="0.2065" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/drawable/start_streaming_icon.xml" value="0.144" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/layout/activity_device_list.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/layout/activity_main.xml" value="0.23183760683760685" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/layout/activity_splash.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/layout/command_history.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/layout/device_name.xml" value="0.20778110303548525" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/layout/fragment_console_tab.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/layout/fragment_file_sender_tab.xml" value="0.2" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/layout/fragment_jogging_tab.xml" value="0.72" />
+        <entry key="..\:/Users/LENOVO Z50/AndroidStudioProjects/PlotMaster/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.191" />
+        <entry key="..\:/Users/LENOVO Z50/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/activity_list_item.xml" value="0.20863616930312098" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
