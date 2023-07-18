@@ -1,4 +1,9 @@
 # PlotMaster - Android CNC Plotting Machine Controller
+## Images
+
+![Image 1](https://user-images.githubusercontent.com/99191971/254010142-c8870568-9ab9-443e-be4c-f0ce2d998a7c.png)
+
+![Image 2](https://user-images.githubusercontent.com/99191971/254010135-b6b4fb79-d93d-42ba-894b-f39c709d8fd1.jpg) ![Image 3](https://user-images.githubusercontent.com/99191971/254010168-0baedecf-3b12-4d9f-bc96-7a0e17fbcf8d.png) ![Image 4](https://user-images.githubusercontent.com/99191971/254010179-d558e434-eafe-4527-bd10-e3eb67ffcc68.jpg)
 
 ## Introduction
 PlotMaster is an Android application designed to control and monitor a plotting CNC (Computer Numerical Control) machine. The application provides a user-friendly interface with three main fragments for different functionalities: jogging controls, console interaction, sending G-code files to the machine, and real time graphical representation of the plotting process. The app communicates with the CNC machine using Bluetooth and the GRBL library. The CNC machine itself is built using an Arduino Uno microcontroller.
